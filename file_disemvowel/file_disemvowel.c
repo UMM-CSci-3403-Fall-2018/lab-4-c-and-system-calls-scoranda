@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
@@ -27,7 +28,7 @@ bool is_vowel(char c) {
   bool isContained = false;
   int i;
   for (i=0; i < 10; i++) {
-   if(vowels[i] == letter){
+   if(vowels[i] == c){
     isContained = true;
      }
   }
@@ -87,11 +88,11 @@ int main(int argc, char *argv[]) {
       outputFile = stdout;
     } else {
       if (argc == 2) {
-        inputFile = fopen(argv[1], 'r');
+        inputFile = fopen(argv[1], "r");
         outputFile = stdout;
       } else {
-        inputFile = fopen(argv[1], 'r');
-        outputFile = fopen(argv[2], 'w');
+        inputFile = fopen(argv[1], "r");
+        outputFile = fopen(argv[2], "w");
       }
     }
 
