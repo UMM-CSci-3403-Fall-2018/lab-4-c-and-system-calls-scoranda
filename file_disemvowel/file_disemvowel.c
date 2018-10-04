@@ -82,6 +82,19 @@ int main(int argc, char *argv[]) {
     // Code that processes the command line arguments
     // and sets up inputFile and outputFile.
 
+    if(argc == 1) {
+      inputFile = stdin;
+      outputFile = stdout;
+    } else {
+      if (argc == 2) {
+        inputFile = fopen(argv[1], 'r');
+        outputFile = stdout;
+      } else {
+        inputFile = fopen(argv[1], 'r');
+        outputFile = fopen(argv[2], 'w');
+      }
+    }
+
     disemvowel(inputFile, outputFile);
 
     return 0;
