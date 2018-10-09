@@ -74,6 +74,8 @@ void disemvowel(FILE* inputFile, FILE* outputFile) {
        in_len = fread(in_buf, sizeof(char), BUF_SIZE, inputFile);
      }
 
+     free(in_buf);
+     free(out_buf);
 }
 
 int main(int argc, char *argv[]) {
